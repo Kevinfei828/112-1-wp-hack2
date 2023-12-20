@@ -128,7 +128,7 @@ export async function deleteTask(taskId: string, projectId: string) {
   });
 
   // TODO: 10. Delete the task whose displayId is `taskId`
-  const deletedUser = await db.delete(tasksTable)
+  await db.delete(tasksTable)
   .where(eq(tasksTable.displayId, taskId))
   .returning();
 
